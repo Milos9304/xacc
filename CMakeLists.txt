@@ -16,7 +16,7 @@ set(CMAKE_STANDARD_REQUIRED ON)
 set(CMAKE_CXX_STANDARD 11)
 message(STATUS "C++ version ${CXX_STANDARD} configured.")
 
-option(XACC_BUILD_TESTS "Build test programs" OFF)
+option(XACC_BUILD_TESTS "Build test programs" ON)
 option(XACC_BUILD_EXAMPLES "Build example programs" OFF)
 option(XACC_ENSMALLEN_INCLUDE_DIR "Path to ensmallen.hpp for mlpack optimizer" "")
 option(XACC_ARMADILLO_INCLUDE_DIR "Path to armadillo header for mlpack optimizer" "")
