@@ -316,25 +316,25 @@ namespace circuits {
 #pragma GCC diagnostic ignored "-Wnarrowing"
     void ASWAP::CNOT(int in_q1, int in_q2)
     {
-        auto cnot = m_gateRegistry->createInstruction("CNOT", std::vector<std::size_t>{ in_q1, in_q2 });
+        auto cnot = m_gateRegistry->createInstruction("CNOT", std::vector<std::size_t>{ (std::size_t) in_q1, (std::size_t) in_q2 });
         addInstruction(cnot);
     }
 
     void ASWAP::X(int in_qubit)
     {
-        auto xGate = m_gateRegistry->createInstruction("X", std::vector<std::size_t>{ in_qubit });
+        auto xGate = m_gateRegistry->createInstruction("X", std::vector<std::size_t>{ (std::size_t) in_qubit });
         addInstruction(xGate);
     }
 
     void ASWAP::H(int in_qubit)
     {
-        auto hGate = m_gateRegistry->createInstruction("H", std::vector<std::size_t>{ in_qubit });
+        auto hGate = m_gateRegistry->createInstruction("H", std::vector<std::size_t>{ (std::size_t) in_qubit });
         addInstruction(hGate);
     }
 
     void ASWAP::Rx(int in_qubit, const std::string& in_param)
     {
-        auto rotationGate = m_gateRegistry->createInstruction("Rx", std::vector<std::size_t>{ in_qubit });
+        auto rotationGate = m_gateRegistry->createInstruction("Rx", std::vector<std::size_t>{ (std::size_t) in_qubit });
         InstructionParameter gateParam(in_param);
         rotationGate->setParameter(0, gateParam);
         addInstruction(rotationGate);
@@ -342,7 +342,7 @@ namespace circuits {
 
     void ASWAP::Rx(int in_qubit, double in_angle)
     {
-        auto rotationGate = m_gateRegistry->createInstruction("Rx", std::vector<std::size_t>{ in_qubit });
+        auto rotationGate = m_gateRegistry->createInstruction("Rx", std::vector<std::size_t>{ (std::size_t) in_qubit });
         InstructionParameter gateParam(in_angle);
         rotationGate->setParameter(0, gateParam);
         addInstruction(rotationGate);
@@ -350,7 +350,7 @@ namespace circuits {
 
     void ASWAP::Ry(int in_qubit, const std::string& in_param)
     {
-        auto rotationGate = m_gateRegistry->createInstruction("Ry", std::vector<std::size_t>{ in_qubit });
+        auto rotationGate = m_gateRegistry->createInstruction("Ry", std::vector<std::size_t>{ (std::size_t) in_qubit });
         InstructionParameter gateParam(in_param);
         rotationGate->setParameter(0, gateParam);
         addInstruction(rotationGate);
@@ -358,7 +358,7 @@ namespace circuits {
 
     void ASWAP::Ry(int in_qubit, double in_angle)
     {
-        auto rotationGate = m_gateRegistry->createInstruction("Ry", std::vector<std::size_t>{ in_qubit });
+        auto rotationGate = m_gateRegistry->createInstruction("Ry", std::vector<std::size_t>{ (std::size_t) in_qubit });
         InstructionParameter gateParam(in_angle);
         rotationGate->setParameter(0, gateParam);
         addInstruction(rotationGate);
@@ -366,7 +366,7 @@ namespace circuits {
 
     void ASWAP::Rz(int in_qubit, const std::string& in_param)
     {
-        auto rotationGate = m_gateRegistry->createInstruction("Rz", std::vector<std::size_t>{ in_qubit });
+        auto rotationGate = m_gateRegistry->createInstruction("Rz", std::vector<std::size_t>{ (std::size_t) in_qubit });
         InstructionParameter gateParam(in_param);
         rotationGate->setParameter(0, gateParam);
         addInstruction(rotationGate);
@@ -374,7 +374,7 @@ namespace circuits {
 
     void ASWAP::Rz(int in_qubit, double in_angle)
     {
-        auto rotationGate = m_gateRegistry->createInstruction("Rz", std::vector<std::size_t>{ in_qubit });
+        auto rotationGate = m_gateRegistry->createInstruction("Rz", std::vector<std::size_t>{ (std::size_t) in_qubit });
         InstructionParameter gateParam(in_angle);
         rotationGate->setParameter(0, gateParam);
         addInstruction(rotationGate);
