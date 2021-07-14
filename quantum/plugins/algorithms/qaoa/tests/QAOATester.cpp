@@ -456,7 +456,7 @@ TEST(QAOATester, checkMaxCutGrouping) {
 }*/
 
 TEST(QAOATester, checkP1TriangleGraphGroupingExpVal) {
-  auto acc = xacc::getAccelerator("quest", {{"shots", 8192}});
+  auto acc = xacc::getAccelerator("quest", {{"shots", 8192}, {"nbQubits", 3}});
   auto optimizer = xacc::getOptimizer(
       "nlopt",
       {{"maximize", true}, {"initial-parameters", random_vector(-2., 2., 2)}});
