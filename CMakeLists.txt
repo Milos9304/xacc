@@ -1,6 +1,9 @@
 # *******************************************************************************
 # Copyright (c) 2017 UT-Battelle, LLC.
-# All rights reserved. This program and the accompanying materials
+# Copyright (c) 2021, Milos Prokop
+# All rights reserved. 
+# 
+# This program and the accompanying materials
 # are made available under the terms of the Eclipse Public License v1.0
 # and Eclipse Distribution License v.10 which accompany this distribution.
 # The Eclipse Public License is available at http://www.eclipse.org/legal/epl-v10.html
@@ -13,7 +16,7 @@
 cmake_minimum_required(VERSION 3.1 FATAL_ERROR)
 project(xacc VERSION 1.0.0 LANGUAGES CXX)
 set(CMAKE_STANDARD_REQUIRED ON)
-set(CMAKE_CXX_STANDARD 11)
+set(CMAKE_CXX_STANDARD 17)
 message(STATUS "C++ version ${CXX_STANDARD} configured.")
 
 option(XACC_BUILD_TESTS "Build test programs" OFF)
@@ -131,7 +134,7 @@ add_subdirectory(xacc)
 add_subdirectory(quantum)
 
 find_package(Python COMPONENTS Interpreter Development)
-if(Python_FOUND)
+if(false)#Python_FOUND)
  if(${Python_VERSION} VERSION_GREATER_EQUAL 3.0.0)
    message(STATUS "${BoldGreen}Found Python version ${Python_VERSION}. Building XACC Python API with ${Python_INCLUDE_DIRS}${ColorReset}")
    add_subdirectory(python)
