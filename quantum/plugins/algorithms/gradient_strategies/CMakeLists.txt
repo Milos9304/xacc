@@ -64,4 +64,6 @@ install(TARGETS ${LIBRARY_NAME} DESTINATION ${CMAKE_INSTALL_PREFIX}/plugins)
 
 # Since Autodiff gradient strategy has extra dependency, 
 # build it separately.
-add_subdirectory(autodiff)
+
+message(WARNING "autodiff disabled due to compile err")
+#add_subdirectory(autodiff)
