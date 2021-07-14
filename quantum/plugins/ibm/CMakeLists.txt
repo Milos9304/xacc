@@ -11,7 +11,7 @@
 #   Alexander J. McCaskey - initial API and implementation
 # *******************************************************************************/
 
-add_subdirectory(aer)
+#add_subdirectory(aer)
 
 set(LIBRARY_NAME xacc-ibm)
 
