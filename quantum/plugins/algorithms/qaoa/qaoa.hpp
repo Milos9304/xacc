@@ -9,9 +9,11 @@
  *
  * Contributors:
  *   Thien Nguyen - initial API and implementation
+ *   Milos Prokop - variable assignment mode
  *******************************************************************************/
 #pragma once
 
+#include "PauliOperator.hpp"
 #include "Algorithm.hpp"
 #include "IRProvider.hpp"
 #include "CompositeInstruction.hpp"
@@ -37,10 +39,31 @@ private:
     std::shared_ptr<AlgorithmGradientStrategy> gradientStrategy;
     std::shared_ptr<CompositeInstruction> externalAnsatz;
     std::shared_ptr<CompositeInstruction> m_single_exec_kernel;
+    std::function<void(int, double, double, double, std::string)> stats_func;
+
     int m_nbSteps;
+    int nbSamples = 1024;
     std::string m_parameterizedMode;
     bool m_maximize = false;
-    CompositeInstruction* m_initial_state = nullptr;
+    
+    bool m_varAssignmentMode = false;
+    bool m_simplifiedSimulationMode = false;
+    bool m_questHamExpectation = false;
+
+    bool m_overlapTrick = false;
+    int zeroRefState = 0;
+
+    quantum::PauliOperator* m_costHamObs_pauli;
+    bool logStats = false;
+    std::shared_ptr<CompositeInstruction> m_initial_state;
+
+    bool m_debugMsgs=false; //print debug messages
+
+    int detailedLogFrequency = 0; //every # iterations; if 0, no detailed logging
+
+    //double evaluate_assignment(xacc::Observable* const observable, std::string measurement) const;
+    //BELOW IS MERGED CODE
+    //CompositeInstruction* m_initial_state = nullptr;
     bool m_shuffleTerms = false;
 };
 } // namespace algorithm
